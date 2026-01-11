@@ -1,0 +1,1799 @@
+{
+  "summary": {
+    "total_modules": 60,
+    "feasibility_breakdown": {
+      "FEASIBLE": 40,
+      "PARTIAL": 18,
+      "NOT_FEASIBLE": 2
+    },
+    "unique_blocking_deps": [
+      "com.openhtmltopdf:openhtmltopdf-core",
+      "com.openhtmltopdf:openhtmltopdf-pdfbox",
+      "org.apache.xmlgraphics:xmlgraphics-commons",
+      "org.docx4j:docx4j-JAXB-ReferenceImpl"
+    ],
+    "unique_replaceable_deps": [
+      "commons-io:commons-io",
+      "org.jsoup:jsoup",
+      "org.nibor.autolink:autolink"
+    ]
+  },
+  "modules": {
+    "flexmark": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 5,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "org.openjdk.jmh",
+            "artifact_id": "jmh-core",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Benchmarking - JVM only is fine"
+          },
+          {
+            "group_id": "org.openjdk.jmh",
+            "artifact_id": "jmh-generator-annprocess",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Benchmarking - JVM only is fine"
+          },
+          {
+            "group_id": "org.apache.logging.log4j",
+            "artifact_id": "log4j-api",
+            "version": "2.20.0",
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Logging - test scope only"
+          },
+          {
+            "group_id": "org.apache.logging.log4j",
+            "artifact_id": "log4j-core",
+            "version": "2.20.0",
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Logging - test scope only"
+          },
+          {
+            "group_id": "org.apache.logging.log4j",
+            "artifact_id": "log4j-1.2-api",
+            "version": "2.20.0",
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Logging - test scope only"
+          }
+        ],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 12,
+        "modules": [
+          "flexmark-test-util",
+          "flexmark-test-specs",
+          "flexmark-util-ast",
+          "flexmark-util-builder",
+          "flexmark-util-collection",
+          "flexmark-util-data",
+          "flexmark-util-dependency",
+          "flexmark-util-format",
+          "flexmark-util-html",
+          "flexmark-util-misc",
+          "flexmark-util-sequence",
+          "flexmark-util-visitor"
+        ]
+      }
+    },
+    "flexmark-all": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 47,
+        "modules": [
+          "flexmark",
+          "flexmark-ext-abbreviation",
+          "flexmark-ext-admonition",
+          "flexmark-ext-anchorlink",
+          "flexmark-ext-aside",
+          "flexmark-ext-attributes",
+          "flexmark-ext-autolink",
+          "flexmark-ext-definition",
+          "flexmark-ext-emoji",
+          "flexmark-ext-enumerated-reference",
+          "flexmark-ext-escaped-character",
+          "flexmark-ext-footnotes",
+          "flexmark-ext-gfm-issues",
+          "flexmark-ext-gfm-strikethrough",
+          "flexmark-ext-gfm-tasklist",
+          "flexmark-ext-gfm-users",
+          "flexmark-ext-gitlab",
+          "flexmark-ext-jekyll-front-matter",
+          "flexmark-ext-jekyll-tag",
+          "flexmark-ext-media-tags",
+          "flexmark-ext-resizable-image",
+          "flexmark-ext-macros",
+          "flexmark-ext-ins",
+          "flexmark-ext-xwiki-macros",
+          "flexmark-ext-superscript",
+          "flexmark-ext-tables",
+          "flexmark-ext-toc",
+          "flexmark-ext-typographic",
+          "flexmark-ext-wikilink",
+          "flexmark-ext-yaml-front-matter",
+          "flexmark-ext-youtube-embedded",
+          "flexmark-html2md-converter",
+          "flexmark-jira-converter",
+          "flexmark-pdf-converter",
+          "flexmark-profile-pegdown",
+          "flexmark-util-ast",
+          "flexmark-util-builder",
+          "flexmark-util-collection",
+          "flexmark-util-data",
+          "flexmark-util-dependency",
+          "flexmark-util-format",
+          "flexmark-util-html",
+          "flexmark-util-misc",
+          "flexmark-util-options",
+          "flexmark-util-sequence",
+          "flexmark-util-visitor",
+          "flexmark-youtrack-converter"
+        ]
+      }
+    },
+    "flexmark-core-test": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "org.openjdk.jmh",
+            "artifact_id": "jmh-core",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Benchmarking - JVM only is fine"
+          },
+          {
+            "group_id": "org.openjdk.jmh",
+            "artifact_id": "jmh-generator-annprocess",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Benchmarking - JVM only is fine"
+          }
+        ],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark",
+          "flexmark-util",
+          "flexmark-test-util",
+          "flexmark-test-specs"
+        ]
+      }
+    },
+    "flexmark-docx-converter": {
+      "feasibility": "NOT_FEASIBLE",
+      "external_dependencies": {
+        "count": 6,
+        "blocking": [
+          {
+            "group_id": "org.apache.xmlgraphics",
+            "artifact_id": "xmlgraphics-commons",
+            "version": "2.7",
+            "scope": "compile",
+            "category": "BLOCKING",
+            "notes": "XML/graphics utilities - JVM only"
+          },
+          {
+            "group_id": "org.docx4j",
+            "artifact_id": "docx4j-JAXB-ReferenceImpl",
+            "version": "11.4.9",
+            "scope": "compile",
+            "category": "BLOCKING",
+            "notes": "DOCX generation via JAXB - JVM only"
+          }
+        ],
+        "replaceable": [
+          {
+            "group_id": "commons-io",
+            "artifact_id": "commons-io",
+            "version": "2.11.0",
+            "scope": "compile",
+            "category": "REPLACEABLE",
+            "notes": "Use kotlinx-io for basic file utilities"
+          }
+        ],
+        "safe": [
+          {
+            "group_id": "org.apache.logging.log4j",
+            "artifact_id": "log4j-api",
+            "version": "2.20.0",
+            "scope": "compile",
+            "category": "SAFE",
+            "notes": "Logging - test scope only"
+          },
+          {
+            "group_id": "org.apache.logging.log4j",
+            "artifact_id": "log4j-core",
+            "version": "2.20.0",
+            "scope": "compile",
+            "category": "SAFE",
+            "notes": "Logging - test scope only"
+          },
+          {
+            "group_id": "org.apache.logging.log4j",
+            "artifact_id": "log4j-1.2-api",
+            "version": "2.20.0",
+            "scope": "compile",
+            "category": "SAFE",
+            "notes": "Logging - test scope only"
+          }
+        ],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 20,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test",
+          "flexmark-ext-definition",
+          "flexmark-ext-emoji",
+          "flexmark-ext-footnotes",
+          "flexmark-ext-gfm-strikethrough",
+          "flexmark-ext-ins",
+          "flexmark-ext-jekyll-tag",
+          "flexmark-ext-superscript",
+          "flexmark-ext-tables",
+          "flexmark-ext-toc",
+          "flexmark-ext-wikilink",
+          "flexmark-ext-enumerated-reference",
+          "flexmark-ext-attributes",
+          "flexmark-ext-aside",
+          "flexmark-ext-gitlab",
+          "flexmark-ext-macros",
+          "flexmark-ext-autolink"
+        ]
+      }
+    },
+    "flexmark-ext-abbreviation": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 10,
+        "modules": [
+          "flexmark-util",
+          "flexmark-ext-autolink",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test",
+          "flexmark-ext-typographic",
+          "flexmark-ext-ins",
+          "flexmark-ext-escaped-character",
+          "flexmark-ext-gfm-strikethrough",
+          "flexmark-ext-superscript"
+        ]
+      }
+    },
+    "flexmark-ext-admonition": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-ext-tables",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-anchorlink": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-jira-converter",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-aside": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-jira-converter",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-attributes": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 11,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-ext-anchorlink",
+          "flexmark-ext-toc",
+          "flexmark-ext-definition",
+          "flexmark-ext-escaped-character",
+          "flexmark-ext-tables",
+          "flexmark-ext-typographic",
+          "flexmark-ext-emoji",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-autolink": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 1,
+        "blocking": [],
+        "replaceable": [
+          {
+            "group_id": "org.nibor.autolink",
+            "artifact_id": "autolink",
+            "version": "${autolink.version}",
+            "scope": "compile",
+            "category": "REPLACEABLE",
+            "notes": "Implement custom autolink or port - simple algorithm"
+          }
+        ],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test",
+          "flexmark-ext-typographic"
+        ]
+      }
+    },
+    "flexmark-ext-definition": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-emoji": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-jira-converter",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-enumerated-reference": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 6,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-ext-tables",
+          "flexmark-core-test",
+          "flexmark-ext-attributes"
+        ]
+      }
+    },
+    "flexmark-ext-escaped-character": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-footnotes": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-ext-tables",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-gfm-issues": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-gfm-strikethrough": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-gfm-tasklist": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-gfm-users": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-gitlab": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-ins": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-jekyll-front-matter": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-ext-yaml-front-matter",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-jekyll-tag": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-macros": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 6,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-ext-gitlab",
+          "flexmark-test-util",
+          "flexmark-ext-tables",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-media-tags": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 3,
+        "modules": [
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-resizable-image": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 3,
+        "modules": [
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-spec-example": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test",
+          "flexmark-ext-jekyll-front-matter"
+        ]
+      }
+    },
+    "flexmark-ext-superscript": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-tables": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-ext-typographic",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-toc": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-core-test",
+          "flexmark-test-util",
+          "flexmark-ext-typographic"
+        ]
+      }
+    },
+    "flexmark-ext-typographic": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-wikilink": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test",
+          "flexmark-ext-typographic"
+        ]
+      }
+    },
+    "flexmark-ext-xwiki-macros": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-yaml-front-matter": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-youtube-embedded": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 3,
+        "modules": [
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-ext-zzzzzz": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark",
+          "flexmark-core-test",
+          "flexmark-util",
+          "flexmark-test-util",
+          "flexmark-ext-tables"
+        ]
+      }
+    },
+    "flexmark-html2md-converter": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 1,
+        "blocking": [],
+        "replaceable": [
+          {
+            "group_id": "org.jsoup",
+            "artifact_id": "jsoup",
+            "version": "1.15.4",
+            "scope": "compile",
+            "category": "REPLACEABLE",
+            "notes": "Use Ksoup (fleeksoft/ksoup) - API compatible"
+          }
+        ],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-ext-emoji",
+          "flexmark-test-util"
+        ]
+      }
+    },
+    "flexmark-integration-test": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 3,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "org.pegdown",
+            "artifact_id": "pegdown",
+            "version": "1.6.0",
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test-only compatibility check"
+          },
+          {
+            "group_id": "org.openjdk.jmh",
+            "artifact_id": "jmh-core",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Benchmarking - JVM only is fine"
+          },
+          {
+            "group_id": "org.openjdk.jmh",
+            "artifact_id": "jmh-generator-annprocess",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Benchmarking - JVM only is fine"
+          }
+        ],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 15,
+        "modules": [
+          "flexmark",
+          "flexmark-ext-autolink",
+          "flexmark-ext-abbreviation",
+          "flexmark-ext-emoji",
+          "flexmark-ext-footnotes",
+          "flexmark-ext-gfm-strikethrough",
+          "flexmark-ext-gfm-tasklist",
+          "flexmark-ext-tables",
+          "flexmark-ext-toc",
+          "flexmark-ext-yaml-front-matter",
+          "flexmark-ext-wikilink",
+          "flexmark-test-util",
+          "flexmark-util",
+          "flexmark-core-test",
+          "flexmark-test-specs"
+        ]
+      }
+    },
+    "flexmark-java": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 0,
+        "modules": []
+      }
+    },
+    "flexmark-jira-converter": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 9,
+        "modules": [
+          "flexmark-util",
+          "flexmark-ext-gfm-strikethrough",
+          "flexmark-ext-tables",
+          "flexmark-ext-wikilink",
+          "flexmark-ext-ins",
+          "flexmark-ext-superscript",
+          "flexmark",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-osgi": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 46,
+        "modules": [
+          "flexmark",
+          "flexmark-ext-abbreviation",
+          "flexmark-ext-admonition",
+          "flexmark-ext-anchorlink",
+          "flexmark-ext-aside",
+          "flexmark-ext-attributes",
+          "flexmark-ext-autolink",
+          "flexmark-ext-definition",
+          "flexmark-ext-emoji",
+          "flexmark-ext-enumerated-reference",
+          "flexmark-ext-escaped-character",
+          "flexmark-ext-footnotes",
+          "flexmark-ext-gfm-issues",
+          "flexmark-ext-gfm-strikethrough",
+          "flexmark-ext-gfm-tasklist",
+          "flexmark-ext-gfm-users",
+          "flexmark-ext-gitlab",
+          "flexmark-ext-jekyll-front-matter",
+          "flexmark-ext-jekyll-tag",
+          "flexmark-ext-media-tags",
+          "flexmark-ext-resizable-image",
+          "flexmark-ext-ins",
+          "flexmark-ext-xwiki-macros",
+          "flexmark-ext-superscript",
+          "flexmark-ext-tables",
+          "flexmark-ext-toc",
+          "flexmark-ext-typographic",
+          "flexmark-ext-wikilink",
+          "flexmark-ext-yaml-front-matter",
+          "flexmark-ext-youtube-embedded",
+          "flexmark-html2md-converter",
+          "flexmark-jira-converter",
+          "flexmark-profile-pegdown",
+          "flexmark-util",
+          "flexmark-util-ast",
+          "flexmark-util-builder",
+          "flexmark-util-collection",
+          "flexmark-util-data",
+          "flexmark-util-dependency",
+          "flexmark-util-format",
+          "flexmark-util-html",
+          "flexmark-util-misc",
+          "flexmark-util-options",
+          "flexmark-util-sequence",
+          "flexmark-util-visitor",
+          "flexmark-youtrack-converter"
+        ]
+      }
+    },
+    "flexmark-pdf-converter": {
+      "feasibility": "NOT_FEASIBLE",
+      "external_dependencies": {
+        "count": 5,
+        "blocking": [
+          {
+            "group_id": "com.openhtmltopdf",
+            "artifact_id": "openhtmltopdf-core",
+            "version": "${openhtml.version}",
+            "scope": "compile",
+            "category": "BLOCKING",
+            "notes": "HTML to PDF rendering - JVM only"
+          },
+          {
+            "group_id": "com.openhtmltopdf",
+            "artifact_id": "openhtmltopdf-pdfbox",
+            "version": "${openhtml.version}",
+            "scope": "compile",
+            "category": "BLOCKING",
+            "notes": "PDF generation - JVM only"
+          }
+        ],
+        "replaceable": [
+          {
+            "group_id": "org.jsoup",
+            "artifact_id": "jsoup",
+            "version": "1.15.4",
+            "scope": "compile",
+            "category": "REPLACEABLE",
+            "notes": "Use Ksoup (fleeksoft/ksoup) - API compatible"
+          }
+        ],
+        "safe": [],
+        "unknown": [
+          {
+            "group_id": "com.ibm.icu",
+            "artifact_id": "icu4j",
+            "version": "72.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          },
+          {
+            "group_id": "com.openhtmltopdf",
+            "artifact_id": "openhtmltopdf-rtl-support",
+            "version": "${openhtml.version}",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 3,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-test-util"
+        ]
+      }
+    },
+    "flexmark-profile-pegdown": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 1,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "org.pegdown",
+            "artifact_id": "pegdown",
+            "version": "1.6.0",
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test-only compatibility check"
+          }
+        ],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 24,
+        "modules": [
+          "flexmark",
+          "flexmark-ext-abbreviation",
+          "flexmark-ext-anchorlink",
+          "flexmark-ext-aside",
+          "flexmark-ext-autolink",
+          "flexmark-ext-definition",
+          "flexmark-ext-emoji",
+          "flexmark-ext-escaped-character",
+          "flexmark-ext-footnotes",
+          "flexmark-ext-gfm-strikethrough",
+          "flexmark-ext-gfm-tasklist",
+          "flexmark-ext-ins",
+          "flexmark-ext-jekyll-front-matter",
+          "flexmark-ext-superscript",
+          "flexmark-ext-tables",
+          "flexmark-ext-toc",
+          "flexmark-ext-typographic",
+          "flexmark-ext-wikilink",
+          "flexmark-util-ast",
+          "flexmark-util-data",
+          "flexmark-util-misc",
+          "flexmark-util-sequence",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    },
+    "flexmark-test-specs": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 1,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 1,
+        "modules": [
+          "flexmark-test-util"
+        ]
+      }
+    },
+    "flexmark-test-util": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "compile",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util-misc",
+          "flexmark-util-data",
+          "flexmark-util-ast",
+          "flexmark-util-format",
+          "flexmark-util-sequence"
+        ]
+      }
+    },
+    "flexmark-tree-iteration": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "org.slf4j",
+            "artifact_id": "slf4j-api",
+            "version": "1.7.26",
+            "scope": "compile",
+            "category": "SAFE",
+            "notes": "Logging facade - replaceable with println or Kermit"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 4,
+        "modules": [
+          "flexmark-util-ast",
+          "flexmark-util-data",
+          "flexmark-util-collection",
+          "flexmark-test-util"
+        ]
+      }
+    },
+    "flexmark-util": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 11,
+        "modules": [
+          "flexmark-util-ast",
+          "flexmark-util-builder",
+          "flexmark-util-collection",
+          "flexmark-util-data",
+          "flexmark-util-dependency",
+          "flexmark-util-format",
+          "flexmark-util-html",
+          "flexmark-util-misc",
+          "flexmark-util-options",
+          "flexmark-util-sequence",
+          "flexmark-util-visitor"
+        ]
+      }
+    },
+    "flexmark-util-ast": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 5,
+        "modules": [
+          "flexmark-util-collection",
+          "flexmark-util-misc",
+          "flexmark-util-data",
+          "flexmark-util-sequence",
+          "flexmark-util-visitor"
+        ]
+      }
+    },
+    "flexmark-util-builder": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 2,
+        "modules": [
+          "flexmark-util-misc",
+          "flexmark-util-data"
+        ]
+      }
+    },
+    "flexmark-util-collection": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 1,
+        "modules": [
+          "flexmark-util-misc"
+        ]
+      }
+    },
+    "flexmark-util-data": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 1,
+        "modules": [
+          "flexmark-util-misc"
+        ]
+      }
+    },
+    "flexmark-util-dependency": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 3,
+        "modules": [
+          "flexmark-util-collection",
+          "flexmark-util-misc",
+          "flexmark-util-data"
+        ]
+      }
+    },
+    "flexmark-util-experimental": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 6,
+        "modules": [
+          "flexmark-util-ast",
+          "flexmark-util-data",
+          "flexmark-util-misc",
+          "flexmark-util-collection",
+          "flexmark-util-sequence",
+          "flexmark-test-util"
+        ]
+      }
+    },
+    "flexmark-util-format": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 6,
+        "modules": [
+          "flexmark-util-ast",
+          "flexmark-util-collection",
+          "flexmark-util-data",
+          "flexmark-util-html",
+          "flexmark-util-misc",
+          "flexmark-util-sequence"
+        ]
+      }
+    },
+    "flexmark-util-html": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 2,
+        "modules": [
+          "flexmark-util-misc",
+          "flexmark-util-sequence"
+        ]
+      }
+    },
+    "flexmark-util-misc": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 0,
+        "modules": []
+      }
+    },
+    "flexmark-util-options": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 2,
+        "modules": [
+          "flexmark-util-misc",
+          "flexmark-util-sequence"
+        ]
+      }
+    },
+    "flexmark-util-sequence": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 3,
+        "modules": [
+          "flexmark-util-collection",
+          "flexmark-util-data",
+          "flexmark-util-misc"
+        ]
+      }
+    },
+    "flexmark-util-visitor": {
+      "feasibility": "PARTIAL",
+      "external_dependencies": {
+        "count": 2,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [
+          {
+            "group_id": "junit",
+            "artifact_id": "junit",
+            "version": null,
+            "scope": "test",
+            "category": "SAFE",
+            "notes": "Test framework - JVM testing is fine"
+          }
+        ],
+        "unknown": [
+          {
+            "group_id": "org.jetbrains",
+            "artifact_id": "annotations",
+            "version": "24.0.1",
+            "scope": "compile",
+            "category": "UNKNOWN",
+            "notes": "Needs manual review for KMP compatibility"
+          }
+        ]
+      },
+      "internal_dependencies": {
+        "count": 0,
+        "modules": []
+      }
+    },
+    "flexmark-youtrack-converter": {
+      "feasibility": "FEASIBLE",
+      "external_dependencies": {
+        "count": 0,
+        "blocking": [],
+        "replaceable": [],
+        "safe": [],
+        "unknown": []
+      },
+      "internal_dependencies": {
+        "count": 6,
+        "modules": [
+          "flexmark-util",
+          "flexmark",
+          "flexmark-ext-gfm-strikethrough",
+          "flexmark-ext-tables",
+          "flexmark-test-util",
+          "flexmark-core-test"
+        ]
+      }
+    }
+  }
+}
