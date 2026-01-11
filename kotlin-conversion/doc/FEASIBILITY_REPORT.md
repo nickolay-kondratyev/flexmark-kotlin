@@ -6,6 +6,45 @@
 
 ---
 
+## thorgCore Use Case Assessment
+
+**VERDICT: HIGHLY FEASIBLE**
+
+Your project uses only modules that are fully convertible to Kotlin-MP:
+
+| Library | Tier | Regex Usages | Blocking Deps | Status |
+|---------|------|--------------|---------------|--------|
+| `flexmark` | 2 | 135 | None | CONVERTIBLE |
+| `flexmark-util-ast` | 1 | 0 | None | CONVERTIBLE |
+| `flexmark-util` | 1 | 8 | None | CONVERTIBLE |
+| `flexmark-ext-yaml-front-matter` | 2 | 14 | None | CONVERTIBLE |
+| `flexmark-ext-tables` | 2 | 4 | None | CONVERTIBLE |
+| `flexmark-ext-footnotes` | 2 | 6 | None | CONVERTIBLE |
+
+### thorgCore-Specific Metrics
+
+| Metric | Full Project | thorgCore Subset |
+|--------|--------------|------------------|
+| Modules needed | 61 | ~15 (with transitive) |
+| Regex migrations | 425 | **~167** |
+| Blocking deps | 4 | **0** |
+| Feasibility | 82% | **100%** |
+
+### Recommended Conversion for thorgCore
+
+Since you don't use DOCX/PDF/HTML-to-MD converters, your conversion path is straightforward:
+
+1. **Phase 1**: flexmark-util-* modules (foundation)
+2. **Phase 2**: `flexmark` core (135 regex migrations - main effort)
+3. **Phase 3**: Your 3 extensions (24 regex migrations total)
+   - flexmark-ext-yaml-front-matter
+   - flexmark-ext-tables
+   - flexmark-ext-footnotes
+
+**No external dependency blockers affect your usage.**
+
+---
+
 ## Executive Summary
 
 **Conversion to Kotlin Multiplatform is FEASIBLE** for the core parser and most extensions. Approximately **82% of modules** (50 of 61) can be converted. The primary effort involves migrating 425 `Pattern`/`Matcher` usages to `kotlin.text.Regex`. Converter modules (DOCX, PDF) must remain JVM-only due to hard dependencies on JVM-specific libraries.
