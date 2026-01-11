@@ -1,0 +1,871 @@
+{
+  "summary": {
+    "total_modules": 61,
+    "tier_breakdown": {
+      "tier_1_fully_convertible": 13,
+      "tier_2_convertible_with_effort": 37,
+      "tier_3_jvm_only": 11
+    },
+    "total_regex_usages": 425,
+    "total_api_blockers": 557,
+    "unique_blocking_deps": [
+      "com.openhtmltopdf:openhtmltopdf-core",
+      "com.openhtmltopdf:openhtmltopdf-pdfbox",
+      "org.apache.xmlgraphics:xmlgraphics-commons",
+      "org.docx4j:docx4j-JAXB-ReferenceImpl"
+    ],
+    "unique_replaceable_deps": [
+      "commons-io:commons-io",
+      "org.jsoup:jsoup",
+      "org.nibor.autolink:autolink"
+    ],
+    "conversion_recommendation": "Approximately 50 of 61 modules (82%) are candidates for KMP conversion.\n\nPrimary effort: Migrate 425 Pattern/Matcher usages to kotlin.text.Regex.\nModules with blocking deps (4 unique) must remain JVM-only: DOCX, PDF converters.\n\nRecommended approach: Phased conversion starting with flexmark-util-* modules."
+  },
+  "tiers": {
+    "tier_1_fully_convertible": [
+      "flexmark-java",
+      "flexmark-util",
+      "flexmark-util-ast",
+      "flexmark-util-builder",
+      "flexmark-util-collection",
+      "flexmark-util-data",
+      "flexmark-util-dependency",
+      "flexmark-util-format",
+      "flexmark-util-html",
+      "flexmark-util-misc",
+      "flexmark-util-options",
+      "flexmark-util-sequence",
+      "flexmark-util-visitor"
+    ],
+    "tier_2_convertible_with_effort": [
+      "flexmark",
+      "flexmark-ext-abbreviation",
+      "flexmark-ext-admonition",
+      "flexmark-ext-anchorlink",
+      "flexmark-ext-aside",
+      "flexmark-ext-attributes",
+      "flexmark-ext-autolink",
+      "flexmark-ext-definition",
+      "flexmark-ext-emoji",
+      "flexmark-ext-enumerated-reference",
+      "flexmark-ext-escaped-character",
+      "flexmark-ext-footnotes",
+      "flexmark-ext-gfm-issues",
+      "flexmark-ext-gfm-strikethrough",
+      "flexmark-ext-gfm-tasklist",
+      "flexmark-ext-gfm-users",
+      "flexmark-ext-gitlab",
+      "flexmark-ext-ins",
+      "flexmark-ext-jekyll-front-matter",
+      "flexmark-ext-jekyll-tag",
+      "flexmark-ext-macros",
+      "flexmark-ext-media-tags",
+      "flexmark-ext-resizable-image",
+      "flexmark-ext-spec-example",
+      "flexmark-ext-superscript",
+      "flexmark-ext-tables",
+      "flexmark-ext-toc",
+      "flexmark-ext-typographic",
+      "flexmark-ext-wikilink",
+      "flexmark-ext-xwiki-macros",
+      "flexmark-ext-yaml-front-matter",
+      "flexmark-ext-youtube-embedded",
+      "flexmark-ext-zzzzzz",
+      "flexmark-html2md-converter",
+      "flexmark-java-samples",
+      "flexmark-jira-converter",
+      "flexmark-youtrack-converter"
+    ],
+    "tier_3_jvm_only": [
+      "flexmark-all",
+      "flexmark-core-test",
+      "flexmark-docx-converter",
+      "flexmark-integration-test",
+      "flexmark-osgi",
+      "flexmark-pdf-converter",
+      "flexmark-profile-pegdown",
+      "flexmark-test-specs",
+      "flexmark-test-util",
+      "flexmark-tree-iteration",
+      "flexmark-util-experimental"
+    ]
+  },
+  "modules": {
+    "flexmark": {
+      "module_name": "flexmark",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 151,
+      "regex_usage_count": 135,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (135 occurrences) - needs kotlin.text.Regex migration",
+        "Has 16 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-all": {
+      "module_name": "flexmark-all",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-core-test": {
+      "module_name": "flexmark-core-test",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 8,
+      "regex_usage_count": 2,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (2 occurrences) - needs kotlin.text.Regex migration",
+        "Has 6 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-docx-converter": {
+      "module_name": "flexmark-docx-converter",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 20,
+      "regex_usage_count": 5,
+      "blocking_deps": [
+        "org.apache.xmlgraphics:xmlgraphics-commons",
+        "org.docx4j:docx4j-JAXB-ReferenceImpl"
+      ],
+      "replaceable_deps": [
+        "commons-io:commons-io"
+      ],
+      "notes": [
+        "Has blocking dependencies: org.apache.xmlgraphics:xmlgraphics-commons, org.docx4j:docx4j-JAXB-ReferenceImpl",
+        "Needs dependency replacement: commons-io:commons-io",
+        "Uses Pattern/Matcher (5 occurrences) - needs kotlin.text.Regex migration",
+        "Has 15 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-ext-abbreviation": {
+      "module_name": "flexmark-ext-abbreviation",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 10,
+      "regex_usage_count": 10,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (10 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-admonition": {
+      "module_name": "flexmark-ext-admonition",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 6,
+      "regex_usage_count": 5,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (5 occurrences) - needs kotlin.text.Regex migration",
+        "Has 1 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-ext-anchorlink": {
+      "module_name": "flexmark-ext-anchorlink",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-aside": {
+      "module_name": "flexmark-ext-aside",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-attributes": {
+      "module_name": "flexmark-ext-attributes",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 9,
+      "regex_usage_count": 9,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (9 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-autolink": {
+      "module_name": "flexmark-ext-autolink",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 8,
+      "regex_usage_count": 8,
+      "blocking_deps": [],
+      "replaceable_deps": [
+        "org.nibor.autolink:autolink"
+      ],
+      "notes": [
+        "Needs dependency replacement: org.nibor.autolink:autolink",
+        "Uses Pattern/Matcher (8 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-definition": {
+      "module_name": "flexmark-ext-definition",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-emoji": {
+      "module_name": "flexmark-ext-emoji",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 5,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Has 5 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-ext-enumerated-reference": {
+      "module_name": "flexmark-ext-enumerated-reference",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 11,
+      "regex_usage_count": 11,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (11 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-escaped-character": {
+      "module_name": "flexmark-ext-escaped-character",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-footnotes": {
+      "module_name": "flexmark-ext-footnotes",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 6,
+      "regex_usage_count": 6,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (6 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-gfm-issues": {
+      "module_name": "flexmark-ext-gfm-issues",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 2,
+      "regex_usage_count": 2,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (2 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-gfm-strikethrough": {
+      "module_name": "flexmark-ext-gfm-strikethrough",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-gfm-tasklist": {
+      "module_name": "flexmark-ext-gfm-tasklist",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-gfm-users": {
+      "module_name": "flexmark-ext-gfm-users",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 2,
+      "regex_usage_count": 2,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (2 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-gitlab": {
+      "module_name": "flexmark-ext-gitlab",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 13,
+      "regex_usage_count": 13,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (13 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-ins": {
+      "module_name": "flexmark-ext-ins",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-jekyll-front-matter": {
+      "module_name": "flexmark-ext-jekyll-front-matter",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 9,
+      "regex_usage_count": 9,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (9 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-jekyll-tag": {
+      "module_name": "flexmark-ext-jekyll-tag",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 9,
+      "regex_usage_count": 9,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (9 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-macros": {
+      "module_name": "flexmark-ext-macros",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 12,
+      "regex_usage_count": 12,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (12 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-media-tags": {
+      "module_name": "flexmark-ext-media-tags",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-resizable-image": {
+      "module_name": "flexmark-ext-resizable-image",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 2,
+      "regex_usage_count": 2,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (2 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-spec-example": {
+      "module_name": "flexmark-ext-spec-example",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 5,
+      "regex_usage_count": 5,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (5 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-superscript": {
+      "module_name": "flexmark-ext-superscript",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-tables": {
+      "module_name": "flexmark-ext-tables",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 4,
+      "regex_usage_count": 4,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (4 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-toc": {
+      "module_name": "flexmark-ext-toc",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 15,
+      "regex_usage_count": 14,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (14 occurrences) - needs kotlin.text.Regex migration",
+        "Has 1 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-ext-typographic": {
+      "module_name": "flexmark-ext-typographic",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-wikilink": {
+      "module_name": "flexmark-ext-wikilink",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-xwiki-macros": {
+      "module_name": "flexmark-ext-xwiki-macros",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 20,
+      "regex_usage_count": 20,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (20 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-yaml-front-matter": {
+      "module_name": "flexmark-ext-yaml-front-matter",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 14,
+      "regex_usage_count": 14,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (14 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-ext-youtube-embedded": {
+      "module_name": "flexmark-ext-youtube-embedded",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-ext-zzzzzz": {
+      "module_name": "flexmark-ext-zzzzzz",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 7,
+      "regex_usage_count": 7,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (7 occurrences) - needs kotlin.text.Regex migration"
+      ]
+    },
+    "flexmark-html2md-converter": {
+      "module_name": "flexmark-html2md-converter",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 31,
+      "regex_usage_count": 29,
+      "blocking_deps": [],
+      "replaceable_deps": [
+        "org.jsoup:jsoup"
+      ],
+      "notes": [
+        "Needs dependency replacement: org.jsoup:jsoup",
+        "Uses Pattern/Matcher (29 occurrences) - needs kotlin.text.Regex migration",
+        "Has 2 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-integration-test": {
+      "module_name": "flexmark-integration-test",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-java": {
+      "module_name": "flexmark-java",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-java-samples": {
+      "module_name": "flexmark-java-samples",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 26,
+      "regex_usage_count": 14,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (14 occurrences) - needs kotlin.text.Regex migration",
+        "Has 12 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-jira-converter": {
+      "module_name": "flexmark-jira-converter",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-osgi": {
+      "module_name": "flexmark-osgi",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-pdf-converter": {
+      "module_name": "flexmark-pdf-converter",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 2,
+      "regex_usage_count": 0,
+      "blocking_deps": [
+        "com.openhtmltopdf:openhtmltopdf-core",
+        "com.openhtmltopdf:openhtmltopdf-pdfbox"
+      ],
+      "replaceable_deps": [
+        "org.jsoup:jsoup"
+      ],
+      "notes": [
+        "Has blocking dependencies: com.openhtmltopdf:openhtmltopdf-core, com.openhtmltopdf:openhtmltopdf-pdfbox",
+        "Needs dependency replacement: org.jsoup:jsoup",
+        "Has 2 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-profile-pegdown": {
+      "module_name": "flexmark-profile-pegdown",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 1,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Has 1 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-test-specs": {
+      "module_name": "flexmark-test-specs",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-test-util": {
+      "module_name": "flexmark-test-util",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 46,
+      "regex_usage_count": 21,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (21 occurrences) - needs kotlin.text.Regex migration",
+        "Has 25 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-tree-iteration": {
+      "module_name": "flexmark-tree-iteration",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-util": {
+      "module_name": "flexmark-util",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 12,
+      "regex_usage_count": 8,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (8 occurrences) - needs kotlin.text.Regex migration",
+        "Has 4 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-util-ast": {
+      "module_name": "flexmark-util-ast",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 2,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Has 2 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-util-builder": {
+      "module_name": "flexmark-util-builder",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-util-collection": {
+      "module_name": "flexmark-util-collection",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 1,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Has 1 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-util-data": {
+      "module_name": "flexmark-util-data",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-util-dependency": {
+      "module_name": "flexmark-util-dependency",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-util-experimental": {
+      "module_name": "flexmark-util-experimental",
+      "tier": 3,
+      "tier_description": "JVM-Only",
+      "feasibility": "NOT_FEASIBLE",
+      "api_blocker_count": 2,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Has 2 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-util-format": {
+      "module_name": "flexmark-util-format",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 6,
+      "regex_usage_count": 5,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (5 occurrences) - needs kotlin.text.Regex migration",
+        "Has 1 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-util-html": {
+      "module_name": "flexmark-util-html",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 18,
+      "regex_usage_count": 5,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (5 occurrences) - needs kotlin.text.Regex migration",
+        "Has 13 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-util-misc": {
+      "module_name": "flexmark-util-misc",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 21,
+      "regex_usage_count": 7,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (7 occurrences) - needs kotlin.text.Regex migration",
+        "Has 14 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-util-options": {
+      "module_name": "flexmark-util-options",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-util-sequence": {
+      "module_name": "flexmark-util-sequence",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 41,
+      "regex_usage_count": 32,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": [
+        "Uses Pattern/Matcher (32 occurrences) - needs kotlin.text.Regex migration",
+        "Has 9 other Java API usages requiring migration"
+      ]
+    },
+    "flexmark-util-visitor": {
+      "module_name": "flexmark-util-visitor",
+      "tier": 1,
+      "tier_description": "Fully Convertible",
+      "feasibility": "FEASIBLE",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    },
+    "flexmark-youtrack-converter": {
+      "module_name": "flexmark-youtrack-converter",
+      "tier": 2,
+      "tier_description": "Convertible with Effort",
+      "feasibility": "PARTIAL",
+      "api_blocker_count": 0,
+      "regex_usage_count": 0,
+      "blocking_deps": [],
+      "replaceable_deps": [],
+      "notes": []
+    }
+  }
+}
