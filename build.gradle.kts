@@ -4,8 +4,9 @@ plugins {
 }
 
 allprojects {
-    group = "com.vladsch.flexmark"
-    version = "0.64.8-KMP"
+    group = "app.thorg.flexmark"
+    // Forked from 0.64.8-KMP 0.64.6
+    version = "0.1"
 
     repositories {
         mavenCentral()

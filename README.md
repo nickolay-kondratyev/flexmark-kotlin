@@ -6,3 +6,6 @@ Why? So that core of flexmark can be used in kotlin-multiplatform projects.
 
 For original README refer to [ORIGINAL_FLEXMARK_README.md](./ORIGINAL_FLEXMARK_README.md)
 
+
+### Fork metadata
+- Forked from commit `bcfe84a3ab6d23d04adce3e5a0bae45c6b791d14`, which I believe was `0.64.8 version`.
