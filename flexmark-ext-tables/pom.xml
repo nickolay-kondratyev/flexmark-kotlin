@@ -28,11 +28,6 @@
         </dependency>
         <dependency>
             <groupId>com.vladsch.flexmark</groupId>
-            <artifactId>flexmark-ext-typographic</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.vladsch.flexmark</groupId>
             <artifactId>flexmark-core-test</artifactId>
             <scope>test</scope>
         </dependency>

@@ -22,65 +22,29 @@
     <url>https://github.com/vsch/flexmark-java</url>
 
     <modules>
-        <module>flexmark</module>
-        <module>flexmark-core-test</module>
-        <module>flexmark-ext-abbreviation</module>
-        <module>flexmark-ext-admonition</module>
-        <module>flexmark-ext-anchorlink</module>
-        <module>flexmark-ext-aside</module>
-        <module>flexmark-ext-attributes</module>
-        <module>flexmark-ext-autolink</module>
-        <module>flexmark-ext-definition</module>
-        <module>flexmark-ext-emoji</module>
-        <module>flexmark-ext-enumerated-reference</module>
-        <module>flexmark-ext-escaped-character</module>
-        <module>flexmark-ext-footnotes</module>
-        <module>flexmark-ext-gfm-issues</module>
-        <module>flexmark-ext-gfm-strikethrough</module>
-        <module>flexmark-ext-gfm-tasklist</module>
-        <module>flexmark-ext-gfm-users</module>
-        <module>flexmark-ext-gitlab</module>
-        <module>flexmark-ext-ins</module>
-        <module>flexmark-ext-jekyll-front-matter</module>
-        <module>flexmark-ext-jekyll-tag</module>
-        <module>flexmark-ext-macros</module>
-        <module>flexmark-ext-media-tags</module>
-        <module>flexmark-ext-resizable-image</module>
-        <module>flexmark-ext-spec-example</module>
-        <module>flexmark-ext-superscript</module>
-        <module>flexmark-ext-tables</module>
-        <module>flexmark-ext-toc</module>
-        <module>flexmark-ext-typographic</module>
-        <module>flexmark-ext-wikilink</module>
-        <module>flexmark-ext-xwiki-macros</module>
-        <module>flexmark-ext-yaml-front-matter</module>
-        <module>flexmark-ext-youtube-embedded</module>
-        <module>flexmark-ext-zzzzzz</module>
-        <module>flexmark-test-util</module>
-        <module>flexmark-tree-iteration</module>
-        <module>flexmark-util</module>
-        <module>flexmark-util-ast</module>
-        <module>flexmark-util-builder</module>
-        <module>flexmark-util-collection</module>
-        <module>flexmark-util-data</module>
-        <module>flexmark-util-dependency</module>
-        <module>flexmark-util-experimental</module>
-        <module>flexmark-util-format</module>
-        <module>flexmark-util-html</module>
+        <!-- Utility modules (in dependency order) -->
         <module>flexmark-util-misc</module>
-        <module>flexmark-util-sequence</module>
-        <module>flexmark-util-options</module>
         <module>flexmark-util-visitor</module>
-        <module>flexmark-youtrack-converter</module>
-        <module>flexmark-html2md-converter</module>
-        <module>flexmark-integration-test</module>
-        <module>flexmark-jira-converter</module>
-        <module>flexmark-pdf-converter</module>
-        <module>flexmark-profile-pegdown</module>
+        <module>flexmark-util-data</module>
+        <module>flexmark-util-collection</module>
+        <module>flexmark-util-sequence</module>
+        <module>flexmark-util-html</module>
+        <module>flexmark-util-options</module>
+        <module>flexmark-util-builder</module>
+        <module>flexmark-util-dependency</module>
+        <module>flexmark-util-ast</module>
+        <module>flexmark-util-format</module>
+        <module>flexmark-util</module>
+        <!-- Core -->
+        <module>flexmark</module>
+        <!-- Test infrastructure -->
+        <module>flexmark-test-util</module>
         <module>flexmark-test-specs</module>
-        <module>flexmark-all</module>
-        <module>flexmark-osgi</module>
-        <module>flexmark-docx-converter</module>
+        <module>flexmark-core-test</module>
+        <!-- Extensions -->
+        <module>flexmark-ext-tables</module>
+        <module>flexmark-ext-footnotes</module>
+        <module>flexmark-ext-yaml-front-matter</module>
     </modules>
 
     <properties>
@@ -247,265 +211,10 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- For dependencies between modules -->
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-docx-converter</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-abbreviation</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-anchorlink</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-admonition</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-aside</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-attributes</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-autolink</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-definition</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-emoji</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-enumerated-reference</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-escaped-character</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-footnotes</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-gfm-issues</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-gfm-strikethrough</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-gfm-tasklist</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-gfm-users</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-gitlab</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-ins</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-jekyll-front-matter</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-jekyll-tag</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-macros</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-media-tags</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-resizable-image</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-xwiki-macros</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-spec-example</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-superscript</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-tables</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-toc</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-typographic</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-wikilink</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-yaml-front-matter</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-youtube-embedded</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-ext-zzzzzz</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-core-test</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-html2md-converter</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-jira-converter</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-pdf-converter</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-profile-pegdown</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-test-specs</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-test-util</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-tree-iteration</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-util-ast</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-util-builder</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-util-collection</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-util-data</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-util-dependency</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-util-format</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-util-html</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+            <!-- Utility modules -->
             <dependency>
                 <groupId>com.vladsch.flexmark</groupId>
                 <artifactId>flexmark-util-misc</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-util-sequence</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-util-options</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -515,22 +224,93 @@
             </dependency>
             <dependency>
                 <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-util-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-util-collection</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-util-sequence</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-util-html</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-util-options</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-util-builder</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-util-dependency</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-util-ast</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-util-format</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
                 <artifactId>flexmark-util</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <!-- Core -->
             <dependency>
                 <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-util-experimental</artifactId>
+                <artifactId>flexmark</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Test infrastructure -->
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-test-util</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-youtrack-converter</artifactId>
+                <artifactId>flexmark-test-specs</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.vladsch.flexmark</groupId>
-                <artifactId>flexmark-all</artifactId>
+                <artifactId>flexmark-core-test</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Extensions -->
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-ext-tables</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-ext-footnotes</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vladsch.flexmark</groupId>
+                <artifactId>flexmark-ext-yaml-front-matter</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
