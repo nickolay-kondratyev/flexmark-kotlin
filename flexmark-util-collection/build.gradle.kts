@@ -1,0 +1,8 @@
+plugins {
+    `java-library`
+}
+
+dependencies {
+    api(project(":flexmark-util-misc"))
+    implementation("org.jetbrains:annotations:24.0.1")
+}

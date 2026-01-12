@@ -1,76 +1,103 @@
-# Phase 0 Implementation Status
+# Phase 0 and Phase 1 Implementation Status
 
 ## Status: SUCCESS
 
-Phase 0 (Module Removal) has been successfully completed.
+Both Phase 0 (Module Removal) and Phase 1 (Maven to Gradle Conversion) have been successfully completed.
 
 ---
 
-## Steps Completed
+## Phase 0: Module Removal (Completed Earlier)
 
-### Step 1: Handle flexmark-ext-tables test dependency on flexmark-ext-typographic
+### Steps Completed
 
-**Files modified:**
+1. **Handle flexmark-ext-tables test dependency on flexmark-ext-typographic**
+   - Removed TypographicExtension import and options from ComboTableSpecTest.java
+   - Removed DoNotDecorate: 2 test case from ext_tables_ast_spec.md
+   - Removed flexmark-ext-typographic test dependency from pom.xml
 
-1. `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/flexmark-ext-tables/src/test/java/com/vladsch/flexmark/ext/tables/ComboTableSpecTest.java`
-   - Removed import: `import com.vladsch.flexmark.ext.typographic.TypographicExtension;`
-   - Removed options map entry: `optionsMap.put("typographic", ...)`
+2. **Update root pom.xml**
+   - Updated modules section to 19 modules
+   - Updated dependencyManagement section
 
-2. `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/flexmark-ext-tables/src/test/resources/ext_tables_ast_spec.md`
-   - Removed the `DoNotDecorate: 2` test case (lines 3609-3649, including the comment "Typographic should not process separator nodes")
+3. **Delete module directories**
+   - Deleted 47 directories (44 modules + 3 extra directories)
 
-3. `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/flexmark-ext-tables/pom.xml`
-   - Removed the flexmark-ext-typographic test dependency block
-
-### Step 2: Update root pom.xml modules section
-
-**File modified:** `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/pom.xml`
-
-Updated `<modules>` section to keep only 19 modules (in dependency order):
-- 12 utility modules: flexmark-util-misc, flexmark-util-visitor, flexmark-util-data, flexmark-util-collection, flexmark-util-sequence, flexmark-util-html, flexmark-util-options, flexmark-util-builder, flexmark-util-dependency, flexmark-util-ast, flexmark-util-format, flexmark-util
-- 1 core module: flexmark
-- 3 test modules: flexmark-test-util, flexmark-test-specs, flexmark-core-test
-- 3 extension modules: flexmark-ext-tables, flexmark-ext-footnotes, flexmark-ext-yaml-front-matter
-
-### Step 3: Update root pom.xml dependencyManagement section
-
-**File modified:** `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/pom.xml`
-
-Updated `<dependencyManagement>` section to keep only dependencies for:
-- All 12 flexmark-util-* modules
-- flexmark (core)
-- flexmark-test-util, flexmark-test-specs, flexmark-core-test
-- flexmark-ext-tables, flexmark-ext-footnotes, flexmark-ext-yaml-front-matter
-- External deps: junit:junit, org.openjdk.jmh:*
-
-### Step 4: Delete module directories
-
-Deleted 47 directories:
-- 44 modules from pom.xml that were being removed
-- 3 extra directories not in pom.xml (flexmark-formatter-test-suite, flexmark-java-samples, flexmark-test-suite)
+### Verification
+- Maven compile: BUILD SUCCESS
+- Maven tests: BUILD SUCCESS (0 failures, 0 errors)
 
 ---
 
-## Verification Results
+## Phase 1: Maven to Gradle Conversion (Completed)
 
-### Directory count verification
-- Expected: 19 flexmark directories
-- Actual: 19 flexmark directories
+### Steps Completed
 
-### Maven compile verification
-```bash
-mvn clean compile -DskipTests
+1. **Gradle Wrapper Initialization**
+   - Created `gradlew` and `gradlew.bat` scripts
+   - Created `gradle/wrapper/gradle-wrapper.jar`
+   - Created `gradle/wrapper/gradle-wrapper.properties` (Gradle 8.5)
+
+2. **Created settings.gradle.kts**
+   - Root project name: `flexmark-kotlin`
+   - 19 modules included in dependency order
+
+3. **Created root build.gradle.kts**
+   - Java 11 source/target compatibility
+   - UTF-8 encoding
+   - JUnit 4.13.2 for tests
+
+4. **Created 19 module build.gradle.kts files**
+   - All utility modules (12): flexmark-util-misc, flexmark-util-visitor, flexmark-util-data, flexmark-util-collection, flexmark-util-sequence, flexmark-util-html, flexmark-util-options, flexmark-util-builder, flexmark-util-dependency, flexmark-util-ast, flexmark-util-format, flexmark-util
+   - Core module (1): flexmark
+   - Test modules (3): flexmark-test-util, flexmark-test-specs, flexmark-core-test
+   - Extensions (3): flexmark-ext-tables, flexmark-ext-footnotes, flexmark-ext-yaml-front-matter
+
+5. **Removed Maven files**
+   - Deleted all pom.xml files (root + 19 modules)
+
+### Verification
 ```
-- Result: **BUILD SUCCESS**
-- Log: `.tmp/phase0_compile.log`
-
-### Maven test verification
-```bash
-mvn test -Dsurefire.useFile=false
+BUILD SUCCESSFUL in 22s
+78 actionable tasks: 78 executed
 ```
-- Result: **BUILD SUCCESS**
-- All tests pass (0 failures, 0 errors)
-- Log: `.tmp/phase0_test.log`
+
+All 19 modules compile and pass tests successfully.
+
+---
+
+## Deviations from Plan
+
+### Deviation 1: Missing org.jetbrains:annotations dependency
+
+The plan did not include `org.jetbrains:annotations:24.0.1` in all modules that need it. The following modules required explicit addition:
+- `flexmark/build.gradle.kts`
+- `flexmark-core-test/build.gradle.kts`
+- `flexmark-ext-tables/build.gradle.kts`
+- `flexmark-ext-footnotes/build.gradle.kts`
+- `flexmark-ext-yaml-front-matter/build.gradle.kts`
+
+This is because these modules use `@NotNull` and `@Nullable` annotations from JetBrains.
+
+---
+
+## Files Created (Phase 1)
+
+### Root Level
+- `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/gradlew`
+- `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/gradlew.bat`
+- `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/gradle/wrapper/gradle-wrapper.jar`
+- `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/gradle/wrapper/gradle-wrapper.properties`
+- `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/settings.gradle.kts`
+- `/home/nickolaykondratyev/git_repos/nickolay-kondratyev_flexmark-kotlin/build.gradle.kts`
+
+### Module build.gradle.kts files (19 files)
+All modules received a build.gradle.kts file with appropriate dependencies.
+
+---
+
+## Files Deleted (Phase 1)
+
+- 20 pom.xml files (root + 19 modules)
 
 ---
 
@@ -100,18 +127,26 @@ mvn test -Dsurefire.useFile=false
 
 ---
 
-## Issues Encountered
+## Build Commands
 
-None. All steps completed successfully.
+```bash
+# Build without tests
+./gradlew clean build -x test
 
----
+# Run tests
+./gradlew test
 
-## Deviations from Plan
+# Full clean build with tests
+./gradlew clean build
 
-None. Implementation followed the plan exactly.
+# List projects
+./gradlew projects
+```
 
 ---
 
 ## Next Steps
 
-Phase 0 is complete. Phase 1 (Maven to Gradle conversion) can now be initiated.
+Phase 0 and Phase 1 are complete. The project is now ready for:
+- Phase 2: Kotlin Multiplatform setup
+- Phase 3: Java to Kotlin conversion
