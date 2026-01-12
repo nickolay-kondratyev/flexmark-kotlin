@@ -149,7 +149,7 @@ Convert modules in strict dependency order. A module can ONLY be converted after
 
 4. **Handle conversion dialogs**
    - "Correct code after conversion": Yes
-   - "Configure Kotlin": Accept defaults (Kotlin version 1.9.x)
+   - "Configure Kotlin": Accept defaults (Kotlin version 2.1.20)
 
 5. **Move Kotlin files**
    - Move converted .kt files from `src/main/java` to `src/main/kotlin`

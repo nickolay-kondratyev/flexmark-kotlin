@@ -165,7 +165,7 @@ TOP_LEVEL_AGENT delegates to:
 1. **Update root build.gradle.kts for KMP**
    ```kotlin
    plugins {
-       kotlin("multiplatform") version "1.9.22" apply false
+       kotlin("multiplatform") version "2.1.20" apply false
    }
 
    allprojects {
