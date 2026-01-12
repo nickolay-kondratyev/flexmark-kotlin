@@ -38,3 +38,4 @@ target/
 /assets/comms/
 /lib/
 /mvn-dependency-tree.txt
+.idea
