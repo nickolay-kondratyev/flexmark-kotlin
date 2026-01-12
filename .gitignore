@@ -8,6 +8,11 @@ out/
 
 # Maven
 target/
+
+# Gradle
+.gradle/
+build/
+**/build/
 /.idea/workspace.xml
 /flexmark-java.wiki
 /FlexmarkJavaAssets/
